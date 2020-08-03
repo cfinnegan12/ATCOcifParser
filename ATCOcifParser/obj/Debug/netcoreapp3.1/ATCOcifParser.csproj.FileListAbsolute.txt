@@ -1,0 +1,12 @@
+C:\Users\ciara\Documents\ATCOcifParser\ATCOcifParser\bin\Debug\netcoreapp3.1\ATCOcifParser.exe
+C:\Users\ciara\Documents\ATCOcifParser\ATCOcifParser\bin\Debug\netcoreapp3.1\ATCOcifParser.deps.json
+C:\Users\ciara\Documents\ATCOcifParser\ATCOcifParser\bin\Debug\netcoreapp3.1\ATCOcifParser.runtimeconfig.json
+C:\Users\ciara\Documents\ATCOcifParser\ATCOcifParser\bin\Debug\netcoreapp3.1\ATCOcifParser.runtimeconfig.dev.json
+C:\Users\ciara\Documents\ATCOcifParser\ATCOcifParser\bin\Debug\netcoreapp3.1\ATCOcifParser.dll
+C:\Users\ciara\Documents\ATCOcifParser\ATCOcifParser\bin\Debug\netcoreapp3.1\ATCOcifParser.pdb
+C:\Users\ciara\Documents\ATCOcifParser\ATCOcifParser\obj\Debug\netcoreapp3.1\ATCOcifParser.AssemblyInfoInputs.cache
+C:\Users\ciara\Documents\ATCOcifParser\ATCOcifParser\obj\Debug\netcoreapp3.1\ATCOcifParser.AssemblyInfo.cs
+C:\Users\ciara\Documents\ATCOcifParser\ATCOcifParser\obj\Debug\netcoreapp3.1\ATCOcifParser.csproj.CoreCompileInputs.cache
+C:\Users\ciara\Documents\ATCOcifParser\ATCOcifParser\obj\Debug\netcoreapp3.1\ATCOcifParser.dll
+C:\Users\ciara\Documents\ATCOcifParser\ATCOcifParser\obj\Debug\netcoreapp3.1\ATCOcifParser.pdb
+C:\Users\ciara\Documents\ATCOcifParser\ATCOcifParser\obj\Debug\netcoreapp3.1\ATCOcifParser.genruntimeconfig.cache
