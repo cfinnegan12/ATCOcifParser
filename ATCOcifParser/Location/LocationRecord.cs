@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace ATCOcif.Location
+namespace ATCOcif
 {
-    class LocationRecord : IRecord
+    public class LocationRecord : IRecord
     {
         public string location;
         public string fullLocation;

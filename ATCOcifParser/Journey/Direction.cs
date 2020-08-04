@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ATCOcif
 {
-    enum Direction
+    public enum Direction
     {
         Inbound,
         Outbound

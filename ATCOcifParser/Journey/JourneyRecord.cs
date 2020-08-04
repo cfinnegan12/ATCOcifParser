@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+
 
 namespace ATCOcif
 {
-    class JourneyRecord : IRecord
+    public class JourneyRecord : IRecord
     {
         public JourneyHeader journeyHeader;
         public OriginRecord journeyOrigin;

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ATCOcif
 {
-    abstract class StopRecord : IRecord
+    public abstract class StopRecord : IRecord
     {
         public string location;
         public string time;

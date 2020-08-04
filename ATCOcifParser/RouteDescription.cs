@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Text;
-
+﻿
 namespace ATCOcif
 {
-    class RouteDescription : IRecord
+    public class RouteDescription : IRecord
     {
         public string route;
         public Direction direction;

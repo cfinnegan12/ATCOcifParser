@@ -1,12 +1,8 @@
-﻿using ATCOcif.Location;
-using System;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace ATCOcif
 {
-    class ATCOcifParser
+    public class ATCOcifParser
     {
         public List<JourneyRecord> journeys;
         public Dictionary<string, LocationRecord> locations;
