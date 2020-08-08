@@ -5,6 +5,10 @@ using System.Collections.Generic;
 
 namespace ATCOcif
 {
+    /**
+     * <summary>ATCOcifParser Class parses and represents the journeys, routes, and locations in a provided ATCO-cif file</summary>
+     * 
+     */
     public class ATCOcifParser
     {
         public List<JourneyRecord> journeys;
@@ -16,6 +20,10 @@ namespace ATCOcif
         private char[] lineCh;
         private string recordIdentity;
 
+        /// <summary>
+        /// Constructor for ATCOcifParser objects.
+        /// </summary>
+        /// <param name="filepath">The path to the ATCO-cif file intended to be parsed</param>
         public ATCOcifParser(string filepath)
         {
             this.filepath = filepath;
