@@ -15,7 +15,7 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="C:\Users\ciara\Documents\ATCOcifParser\ATCOcifParser\bin\Debug\netcoreapp3.1\ATCOcifParser.dll" target="lib\netcoreapp3.1\ATCOcifParser.dll" />
+    <file src="C:\Users\ciara\Documents\ATCOcifParser\ATCOcifParser\bin\Release\netcoreapp3.1\ATCOcifParser.dll" target="lib\netcoreapp3.1\ATCOcifParser.dll" />
     <file src="C:\Users\ciara\Documents\ATCOcifParser\LICENSE" target="LICENSE" />
   </files>
 </package>

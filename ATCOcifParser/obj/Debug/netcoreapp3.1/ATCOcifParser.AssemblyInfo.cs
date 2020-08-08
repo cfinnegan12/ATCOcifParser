@@ -11,8 +11,10 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("ATCOcifParser")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Ciaran Finnegan")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute("Reads an ATCO-cif standard file and generates an object containing all the journe" +
+    "ys and locations specified in the file")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("ATCOcifParser")]
