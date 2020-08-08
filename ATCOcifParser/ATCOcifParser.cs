@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿/**
+ * Author: Ciaran Finnegan 
+ */
+using System.Collections.Generic;
 
 namespace ATCOcif
 {
