@@ -3,11 +3,12 @@ namespace ATCOcif
 {
     public class IntermediateRecord : StopRecord
     {
-        public char activity;
+        public char Activity { get; }
+
 
         public IntermediateRecord(char[] chars) : base(chars)
         {
-            this.activity = chars[22];
+            this.Activity = chars[22];
         }
 
         protected override void initTime(char[] chars)
