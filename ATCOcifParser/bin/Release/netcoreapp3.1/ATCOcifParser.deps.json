@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "ATCOcifParser/1.0.0": {
+      "ATCOcifParser/1.0.1": {
         "runtime": {
           "ATCOcifParser.dll": {}
         }
@@ -14,7 +14,7 @@
     }
   },
   "libraries": {
-    "ATCOcifParser/1.0.0": {
+    "ATCOcifParser/1.0.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
