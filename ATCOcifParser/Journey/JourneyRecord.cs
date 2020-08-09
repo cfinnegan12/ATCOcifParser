@@ -5,10 +5,14 @@ namespace ATCOcif
 {
     public class JourneyRecord : IRecord
     {
-        public JourneyHeader journeyHeader;
-        public OriginRecord journeyOrigin;
-        public List<IntermediateRecord> intermediateRecords;
-        public DestinationRecord journeyDestination;
+        private OriginRecord origin;
+        private DestinationRecord destination;
+
+
+        public JourneyHeader Header { get; }
+        public List<IntermediateRecord> IntermediateRecords { get; }
+        public OriginRecord Origin { get { return origin; }}
+        public DestinationRecord Destination { get { return destination; } }
         //public JourneyDataRunningRecord journeyDataRunningRecord;
         //public JourneyNoteRecord journeyNoteRecord;
 
@@ -16,43 +20,43 @@ namespace ATCOcif
 
         public JourneyRecord(char[] header)
         {
-            this.journeyHeader = new JourneyHeader(header);
-            this.intermediateRecords = new List<IntermediateRecord>();
+            this.Header = new JourneyHeader(header);
+            this.IntermediateRecords = new List<IntermediateRecord>();
         }
 
-        public void setOriginRecord(char[] origin)
+        public void setOrigin(char[] origin)
         {
-            this.journeyOrigin = new OriginRecord(origin);
+            this.origin = new OriginRecord(origin);
         }
 
         public void addIntermediateRecord(char[] chars)
         {
-            this.intermediateRecords.Add(new IntermediateRecord(chars));
+            this.IntermediateRecords.Add(new IntermediateRecord(chars));
         }
 
-        public void setDestinationRecord(char[] chars)
+        public void setDestination(char[] chars)
         {
-            this.journeyDestination= new DestinationRecord(chars);
+            this.destination= new DestinationRecord(chars);
         }
 
         public override string ToString()
         {
-            string result = this.journeyHeader.ToString();
+            string result = this.Header.ToString();
             result += "------------------------------------------\n";
-            result += this.journeyOrigin.ToString() + "\n";
-            foreach(StopRecord stop in this.intermediateRecords)
+            result += this.Origin.ToString() + "\n";
+            foreach(StopRecord stop in this.IntermediateRecords)
             {
                 result += stop.ToString() + "\n";
             }
-            result += this.journeyDestination.ToString() + "\n";
+            result += this.Destination.ToString() + "\n";
 
             return result;
         }
 
         public string routeDescriptionKey()
         {
-            string result = journeyHeader.route;
-            result += (journeyHeader.direction == Direction.Inbound) ? "I" : "O";
+            string result = Header.Route;
+            result += (Header.Direction == Direction.Inbound) ? "I" : "O";
             return result;
         }
     }

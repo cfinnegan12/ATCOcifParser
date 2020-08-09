@@ -11,9 +11,10 @@ namespace ATCOcif
      */
     public class ATCOcifParser
     {
-        public List<JourneyRecord> journeys;
-        public Dictionary<string, LocationRecord> locations;
-        public Dictionary<string, RouteDescription> routeDescriptions;
+        public List<JourneyRecord> Journeys { get; }
+        public Dictionary<string, LocationRecord> Locations { get; }
+        public Dictionary<string, RouteDescription> Routes { get; }
+
         private string filepath;
         private System.IO.StreamReader file;
         private string line;
@@ -27,9 +28,9 @@ namespace ATCOcif
         public ATCOcifParser(string filepath)
         {
             this.filepath = filepath;
-            this.journeys = new List<JourneyRecord>();
-            this.locations = new Dictionary<string, LocationRecord>();
-            this.routeDescriptions = new Dictionary<string,RouteDescription>();
+            this.Journeys = new List<JourneyRecord>();
+            this.Locations = new Dictionary<string, LocationRecord>();
+            this.Routes = new Dictionary<string,RouteDescription>();
             this.file = new System.IO.StreamReader(this.filepath);
             this.line = "";
             Parse();
@@ -44,19 +45,19 @@ namespace ATCOcif
                 switch (recordIdentity)
                 {
                     case "QS":
-                        journeys.Add(new JourneyRecord(lineCh));
+                        Journeys.Add(new JourneyRecord(lineCh));
                         break;
                     case "QO":
-                        journeys[journeys.Count - 1].setOriginRecord(lineCh);
+                        Journeys[Journeys.Count - 1].setOrigin(lineCh);
                         break;
                     case "QI":
-                        journeys[journeys.Count - 1].addIntermediateRecord(lineCh);
+                        Journeys[Journeys.Count - 1].addIntermediateRecord(lineCh);
                         break;
                     case "QT":
-                        journeys[journeys.Count - 1].setDestinationRecord(lineCh);
+                        Journeys[Journeys.Count - 1].setDestination(lineCh);
                         break;
                     case "QD":
-                        addRouteDescription();
+                        addRoute();
                         break;
                     case "QL":
                         addLocation();
@@ -70,16 +71,16 @@ namespace ATCOcif
             }
         }
 
-        private void addRouteDescription()
+        private void addRoute()
         {
             string key = line.Substring(7, 5).Replace(" ", "");
-            routeDescriptions[key] = new RouteDescription(lineCh);
+            Routes[key] = new RouteDescription(lineCh);
         }
 
         private void addLocation()
         {
-            LocationRecord tmp = new LocationRecord(lineCh);
-            locations[tmp.location] = tmp;
+            string key = Util.charArrSubs(lineCh, 3, 12);
+            Locations[key] = new LocationRecord(lineCh);
         }
 
         private void setLocationGridRef()
@@ -87,7 +88,7 @@ namespace ATCOcif
             string key = line.Substring(3, 12);
             if(line.Length >= 29 && lineCh[15] != ' ')
             {
-                locations[key].setGridReference(lineCh);
+                Locations[key].setGridReference(lineCh);
             }
         }
 
