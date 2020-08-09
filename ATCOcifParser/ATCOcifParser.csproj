@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Ciaran Finnegan</Authors>
     <Description>Reads an ATCO-cif standard file and generates an object containing all the journeys and locations specified in the file</Description>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>

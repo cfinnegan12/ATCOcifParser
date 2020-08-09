@@ -6,8 +6,11 @@ namespace ATCOcif
 {
     public abstract class StopRecord : IRecord
     {
-        public string location;
-        public string time;
+        private string location;
+        protected string time;
+
+        public string Location { get { return location; } }
+        public string Time {get { return time; }}
 
         public StopRecord(char[] chars)
         {
@@ -22,7 +25,7 @@ namespace ATCOcif
 
         public override string ToString()
         {
-            return "Location: " + this.location + "\tTime: " + this.time;
+            return "Location: " + this.Location + "\tTime: " + this.Time;
         }
     }
 }

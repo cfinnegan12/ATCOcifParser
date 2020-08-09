@@ -4,15 +4,19 @@ namespace ATCOcif
 {
     public class LocationRecord : IRecord
     {
-        public string location;
-        public string fullLocation;
-        public int gridEasting = -1;
-        public int gridNorthing = -1;
+        private int gridEasting = -1;
+        private int gridNorthing = -1;
+
+
+        public string Location { get; }
+        public string FullLocation { get; }
+        public int GridEasting { get => gridEasting; }
+        public int GridNorthing { get => gridNorthing; }
 
         public LocationRecord(char[] chars)
         {
-            this.location = Util.charArrSubs(chars, 3, 12);
-            this.fullLocation = Util.charArrSubs(chars, 15, 48, false);
+            this.Location = Util.charArrSubs(chars, 3, 12);
+            this.FullLocation = Util.charArrSubs(chars, 15, 48, false);
         }
 
         public void setGridReference(char[] chars)
@@ -23,8 +27,8 @@ namespace ATCOcif
 
         public override string ToString()
         {
-            string result = "Location (Short Form): \t" + location + "\nLocation (Full Form): \t" + fullLocation;
-            result += "\nGrid Reference: \t" + gridEasting + "\t" + gridNorthing + "\n";
+            string result = "Location (Short Form): \t" + Location + "\nLocation (Full Form): \t" + FullLocation;
+            result += "\nGrid Reference: \t" + GridEasting + "\t" + GridNorthing + "\n";
             return result;
         }
     }

@@ -3,26 +3,21 @@ namespace ATCOcif
 {
     public class RouteDescription : IRecord
     {
-        public string route;
-        public Direction direction;
-        public string description;
+        public string Route { get; }
+        public Direction Direction { get; }
+        public string Description { get; }
 
         public RouteDescription(char[] chars)
         {
-            this.route = Util.charArrSubs(chars, 7, 4);
-            initDirection(chars);
-            this.description = Util.charArrSubs(chars, 12, 68, false);
+            this.Route = Util.charArrSubs(chars, 7, 4);
+            this.Direction = (chars[11] == 'I') ? Direction.Inbound : Direction.Outbound;
+            this.Description = Util.charArrSubs(chars, 12, 68, false);
         }
 
-        private void initDirection(char[] chars)
-        {
-            if (chars[11] == 'I') this.direction = Direction.Inbound;
-            else this.direction = Direction.Outbound;
-        }
 
         public override string ToString()
         {
-            string result = route + ": " + direction + "\n"+description+"\n";
+            string result = Route + ": " + Direction + "\n"+Description+"\n";
             return result;
         }
 
