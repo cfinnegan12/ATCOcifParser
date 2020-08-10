@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ATCOcif;
+using System;
 
 namespace ATCOcifParserTests
 {
@@ -32,7 +33,7 @@ namespace ATCOcifParserTests
         {
             string originStr = "QO7000000153640720UQST1";
             OriginRecord origin = new OriginRecord(originStr.ToCharArray());
-            Assert.AreEqual(origin.Time, "0720");
+            Assert.AreEqual(origin.Time, new System.TimeSpan(07, 20 ,0));
             Assert.AreEqual(origin.Location, "700000015364");
         }
 
@@ -41,7 +42,7 @@ namespace ATCOcifParserTests
         {
             string destStr = "QT7000000015830753   T1  ";
             DestinationRecord dest = new DestinationRecord(destStr.ToCharArray());
-            Assert.AreEqual(dest.Time, "0753");
+            Assert.AreEqual(dest.Time, new System.TimeSpan(07, 53, 0));
             Assert.AreEqual(dest.Location, "700000001583");
         }
 
@@ -50,9 +51,10 @@ namespace ATCOcifParserTests
         {
             string intStr = "QI70000000120507400740B   T1  ";
             IntermediateRecord intermediate = new IntermediateRecord(intStr.ToCharArray());
-            Assert.AreEqual(intermediate.Time, "0740");
+            Assert.AreEqual(intermediate.Time, new System.TimeSpan(07, 40, 0));
             Assert.AreEqual(intermediate.Location, "700000001205");
             Assert.AreEqual(intermediate.Activity, 'B');
+            Assert.AreEqual(intermediate.ToString(), "Location: 700000001205\tTime: 07:40:00");
         }
 
     }
