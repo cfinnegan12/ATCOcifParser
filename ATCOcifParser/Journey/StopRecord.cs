@@ -7,10 +7,10 @@ namespace ATCOcif
     public abstract class StopRecord : IRecord
     {
         private string location;
-        protected string time;
+        protected TimeSpan time;
 
         public string Location { get { return location; } }
-        public string Time {get { return time; }}
+        public TimeSpan Time {get { return time; }}
 
         public StopRecord(char[] chars)
         {
@@ -20,7 +20,10 @@ namespace ATCOcif
 
         virtual protected void initTime(char[] chars)
         {
-            this.time = Util.charArrSubs(chars, 14, 4);
+            string strtime = Util.charArrSubs(chars, 14, 4);
+            int hours = Int32.Parse(strtime.Substring(0,2));
+            int mins = Int32.Parse(strtime.Substring(2, 2));
+            this.time = new TimeSpan(hours, mins, 0);
         }
 
         public override string ToString()
