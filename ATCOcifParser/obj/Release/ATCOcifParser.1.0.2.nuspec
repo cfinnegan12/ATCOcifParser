@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>ATCOcifParser</id>
+    <version>1.0.2</version>
+    <authors>Ciaran Finnegan</authors>
+    <owners>Ciaran Finnegan</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="file">LICENSE</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <description>Reads an ATCO-cif standard file and generates an object containing all the journeys and locations specified in the file</description>
+    <repository url="https://github.com/cfinnegan12/ATCOcifParser" />
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.1" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\ciara\Documents\ATCOcifParser\ATCOcifParser\bin\Release\netcoreapp3.1\ATCOcifParser.dll" target="lib\netcoreapp3.1\ATCOcifParser.dll" />
+    <file src="C:\Users\ciara\Documents\ATCOcifParser\LICENSE" target="LICENSE" />
+  </files>
+</package>
